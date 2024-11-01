@@ -330,7 +330,7 @@ function getGroupMarkupString(groups) {
 
 // RESTART
 window.addEventListener("message", message => {
-    console.log(message.data) // Wayne is coming!!!
+    alert(message.data);
     if (message.data === "restart") {
         document.querySelector(".toolbar").classList.remove("hide");
 
