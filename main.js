@@ -327,3 +327,10 @@ function getGroupMarkupString(groups) {
     });
     return res;
 }
+
+// RESTART
+window.addEventListener('message', (event) => {
+    if (event.data === "restart") {
+        document.querySelector(".toolbar").classList.remove("hide");
+    }
+});
