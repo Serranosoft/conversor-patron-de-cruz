@@ -5,6 +5,10 @@
     z-index: 1000;
 }
 
+.toolbar.hide {
+    display: none;
+}
+
 .toolbar div {
     display: flex;
     gap: 4px;

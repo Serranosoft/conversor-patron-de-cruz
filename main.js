@@ -311,17 +311,9 @@ function render() {
         if (window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
             window.ReactNativeWebView.postMessage(JSON.stringify(similarColorsRemoved))
         }
-
-
-
-
-        // similarColorsRemoved.forEach(color => {
-        //     let colorDiv = document.createElement("div");
-        //     colorDiv.style.backgroundColor = color;
-        //     colores.appendChild(colorDiv);
-        // })
-
     });
+
+    document.querySelector(".toolbar").classList.add("hide");
 }
 
 function getGroupMarkupString(groups) {
