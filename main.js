@@ -329,10 +329,6 @@ function getGroupMarkupString(groups) {
 }
 
 // RESTART
-window.addEventListener('message', (event) => {
-    const data = JSON.parse(event.data);
-    console.log(data);
-    if (data === "restart") {
-        document.querySelector(".toolbar").classList.remove("hide");
-    }
-});
+window.addEventListener("message", message => {
+    console.log(message.data) // Wayne is coming!!!
+  });
