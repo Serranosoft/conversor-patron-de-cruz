@@ -220,8 +220,8 @@ class CrossStitch {
 const dialog = new FileDialog("image/*", false);
 const image = document.querySelector("#image");
 const svg = document.querySelector("#svg");
-const details = document.querySelector("#details");
-const is8bit = document.querySelector("#is8bit");
+// const details = document.querySelector("#details");
+const is8bit = true/* document.querySelector("#is8bit"); */
 const svgResult = document.querySelector("#svgResult");
 let maxSize = 64;
 
@@ -243,7 +243,7 @@ image.addEventListener("load", (e) => {
 });
 
 function render() {
-	maxSize = details.value;
+	maxSize = 96;
 	maxSize = Math.min(image.naturalWidth, maxSize);
 	const scaledSize = CanvasRender.calculateAspectRatioFit(
 		image.naturalWidth,
@@ -255,7 +255,7 @@ function render() {
 	const canvasRender = new CanvasRender(scaledSize.width, scaledSize.height);
 	canvasRender.render(image);
 
-	CrossStitch.toCrossStitchData(canvasRender.imageData, is8bit.checked).then((data) => {
+	CrossStitch.toCrossStitchData(canvasRender.imageData, is8bit).then((data) => {
 		svg.setAttribute('viewBox', `0 0 ${scaledSize.width} ${scaledSize.height}`);
 		svgResult.innerHTML = getGroupMarkupString(data.data);
 	});

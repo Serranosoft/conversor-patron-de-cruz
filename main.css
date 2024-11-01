@@ -1,7 +1,6 @@
 .toolbar {
     display: grid;
     gap: 1rem;
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     z-index: 1000;
 }
@@ -49,8 +48,7 @@ svg {
 body {
     margin: 0;
     padding: 0;
-    background-color: #201a20;
-    color: white;
+    color: #000;
 }
 
 * {
