@@ -307,11 +307,19 @@ function render() {
         const uniqueColors = removeDuplicates(colorsArray);
         const similarColorsRemoved = removeSimilarColors(uniqueColors);
         console.log(similarColorsRemoved);
-        similarColorsRemoved.forEach(color => {
-            let colorDiv = document.createElement("div");
-            colorDiv.style.backgroundColor = color;
-            colores.appendChild(colorDiv);
-        })
+
+        if (window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
+            window.ReactNativeWebView.postMessage(JSON.stringify(similarColorsRemoved))
+        }
+
+
+
+
+        // similarColorsRemoved.forEach(color => {
+        //     let colorDiv = document.createElement("div");
+        //     colorDiv.style.backgroundColor = color;
+        //     colores.appendChild(colorDiv);
+        // })
 
     });
 }
@@ -327,10 +335,3 @@ function getGroupMarkupString(groups) {
     });
     return res;
 }
-
-
-document.getElementById("send-react-native").addEventListener("click", () => {
-    if (window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
-        window.ReactNativeWebView.postMessage('Wayne is coming again')
-    }
-})
