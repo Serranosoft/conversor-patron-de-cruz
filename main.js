@@ -330,7 +330,9 @@ function getGroupMarkupString(groups) {
 
 // RESTART
 window.addEventListener('message', (event) => {
-    if (event.data === "restart") {
+    const data = JSON.parse(event.data);
+    console.log(data);
+    if (data === "restart") {
         document.querySelector(".toolbar").classList.remove("hide");
     }
 });
