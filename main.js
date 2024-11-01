@@ -331,4 +331,8 @@ function getGroupMarkupString(groups) {
 // RESTART
 window.addEventListener("message", message => {
     console.log(message.data) // Wayne is coming!!!
-  });
+    if (message.data === "restart") {
+        document.querySelector(".toolbar").classList.remove("hide");
+
+    }
+});
