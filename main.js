@@ -243,7 +243,7 @@ image.addEventListener("load", (e) => {
 });
 
 function render() {
-	maxSize = 64;
+	maxSize = 80;
 	maxSize = Math.min(image.naturalWidth, maxSize);
 	const scaledSize = CanvasRender.calculateAspectRatioFit(
 		image.naturalWidth,
