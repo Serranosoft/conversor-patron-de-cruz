@@ -221,7 +221,7 @@ const dialog = new FileDialog("image/*", false);
 const image = document.querySelector("#image");
 const svg = document.querySelector("#svg");
 // const details = document.querySelector("#details");
-const is8bit = true/* document.querySelector("#is8bit"); */
+const is8bit = false/* document.querySelector("#is8bit"); */
 const svgResult = document.querySelector("#svgResult");
 let maxSize = 64;
 
