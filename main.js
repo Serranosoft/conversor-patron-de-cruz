@@ -329,7 +329,8 @@ function getGroupMarkupString(groups) {
 }
 
 
-window.addEventListener('message', (event) => {
-    const data = JSON.parse(event.data);
-    console.log('Data received from React Native:', data);
-  });
+document.getElementById("send-react-native").addEventListener("click", () => {
+    if (window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
+        window.ReactNativeWebView.postMessage('Wayne is coming again')
+    }
+})
