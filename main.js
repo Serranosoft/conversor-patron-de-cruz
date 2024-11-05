@@ -328,11 +328,9 @@ function getGroupMarkupString(groups) {
     return res;
 }
 
-// RESTART
-window.addEventListener("message", message => {
-    alert(message.data);
-    if (message.data === "restart") {
-        document.querySelector(".toolbar").classList.remove("hide");
 
+setInterval(() => {
+    if (window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage("keepAlive");
     }
-});
+}, 3000);
