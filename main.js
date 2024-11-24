@@ -303,10 +303,8 @@ function render() {
         svgResult.innerHTML = getGroupMarkupString(data.data);
 
         const colorsArray = data.data.map(item => item.color);
-        console.log(colorsArray);
         const uniqueColors = removeDuplicates(colorsArray);
         const similarColorsRemoved = removeSimilarColors(uniqueColors);
-        console.log(similarColorsRemoved);
 
         if (window.ReactNativeWebView) { // ensure window.ReactNativeWebView is there, otherwise, web app might crash if is not there
             window.ReactNativeWebView.postMessage(JSON.stringify(similarColorsRemoved))
