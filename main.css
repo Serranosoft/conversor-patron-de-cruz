@@ -4,6 +4,7 @@
     gap: 1.5rem;
     padding: 1rem;
     z-index: 1000;
+    margin-top: 2rem;
 }
 
 .toolbar.hide {
