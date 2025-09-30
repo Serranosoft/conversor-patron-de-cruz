@@ -335,6 +335,7 @@ setInterval(() => {
 
 
 window.addEventListener("setLanguage", (event) => {
+    console.log(event);
   const language = event.detail;
   console.log("Idioma recibido desde RN:", language);
 });
