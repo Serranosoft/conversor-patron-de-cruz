@@ -332,11 +332,3 @@ setInterval(() => {
         window.ReactNativeWebView.postMessage("keepAlive");
     }
 }, 3000);
-
-
-window.addEventListener("setLanguage", (event) => {
-    console.log(event);
-  const language = event.detail;
-  document.getElementById("test").textContent = language+"";
-  console.log("Idioma recibido desde RN:", language);
-});
